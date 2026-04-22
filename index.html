@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Essencial Saúde | Excelência em Produtos Hospitalares</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                    },
+                    colors: {
+                        'deep-blue': '#050a1f',
+                        'neon-cyan': '#00f0ff',
+                        'soft-cyan': '#00b4d8',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #050a1f;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        /* Ambient Glow Effects */
+        .glow-blob {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(100px);
+            z-index: -1;
+            opacity: 0.6;
+        }
+
+        /* Glassmorphism */
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .glass-panel:hover {
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(0, 240, 255, 0.3);
+            transform: translateY(-5px);
+            transition: all 0.4s ease;
+        }
+
+        /* Animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Curved shape divider from reference image */
+        .curved-divider {
+            width: 150%;
+            height: 200px;
+            background: linear-gradient(to bottom, #050a1f, #0a1930);
+            border-top-left-radius: 50%;
+            border-top-right-radius: 50%;
+            transform: translateX(-16.66%);
+            margin-top: -100px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .text-gradient {
+            background: linear-gradient(90deg, #ffffff 0%, #00f0ff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-neon-cyan selection:text-deep-blue">
+
+    <!-- Background Ambient Lights -->
+    <div class="glow-blob w-[600px] h-[600px] bg-blue-900 top-[-200px] left-[-200px]"></div>
+    <div class="glow-blob w-[500px] h-[500px] bg-cyan-900 bottom-[20%] right-[-100px]"></div>
+
+    <!-- Header -->
+    <header class="fixed w-full top-0 z-50 glass-panel border-b-0 py-4 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
+            <div class="flex items-center gap-2">
+                <i data-lucide="activity" class="text-neon-cyan h-8 w-8"></i>
+                <span class="text-2xl font-bold tracking-tight">Essencial <span class="font-light text-soft-cyan">Saúde</span></span>
+            </div>
+            <nav class="hidden md:flex gap-8 text-sm font-medium text-gray-300">
+                <a href="#produtos" class="hover:text-neon-cyan transition-colors">Produtos</a>
+                <a href="#diferenciais" class="hover:text-neon-cyan transition-colors">Diferenciais</a>
+                <a href="#avaliacoes" class="hover:text-neon-cyan transition-colors">Avaliações</a>
+            </nav>
+            <a href="https://loja.exijaepis.com.br" target="_blank" class="hidden md:flex items-center gap-2 px-6 py-2 rounded-full bg-white/10 hover:bg-neon-cyan hover:text-deep-blue transition-all duration-300 font-semibold border border-white/10 hover:border-neon-cyan">
+                Acessar Loja
+                <i data-lucide="external-link" class="w-4 h-4"></i>
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center justify-center pt-24 px-6 overflow-hidden">
+        <div class="max-w-4xl mx-auto text-center z-10 reveal">
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-soft-cyan/30 bg-soft-cyan/10 text-soft-cyan text-sm mb-8">
+                <i data-lucide="shield-check" class="w-4 h-4"></i>
+                <span>Certificação Anvisa e Padrão Ouro de Qualidade</span>
+            </div>
+            <h1 class="text-5xl md:text-7xl font-bold leading-tight mb-6">
+                A Precisão que o seu <br>
+                <span class="text-gradient">Procedimento Exige.</span>
+            </h1>
+            <p class="text-lg md:text-xl text-gray-400 mb-10 max-w-2xl mx-auto font-light">
+                Fornecemos insumos hospitalares e EPIs de alta performance para médicos e cirurgiões que não abrem mão da segurança e excelência clínica.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="https://wa.me/5511983446562?text=Olá,%20sou%20médico(a)%20e%20gostaria%20de%20falar%20com%20um%20consultor%20da%20Essencial%20Saúde." target="_blank" class="px-8 py-4 rounded-full bg-neon-cyan text-deep-blue font-bold hover:bg-white hover:shadow-[0_0_20px_rgba(0,240,255,0.5)] transition-all duration-300 flex items-center justify-center gap-2">
+                    <i data-lucide="message-square" class="w-5 h-5"></i>
+                    Falar com Consultor
+                </a>
+                <a href="https://loja.exijaepis.com.br" target="_blank" class="px-8 py-4 rounded-full glass-panel font-semibold hover:text-neon-cyan transition-all duration-300 flex items-center justify-center gap-2">
+                    Catálogo Completo
+                    <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Curved Transition (Mimicking Image style) -->
+    <div class="curved-divider hidden md:block"></div>
+
+    <!-- Persuasion / Stats Section -->
+    <section id="diferenciais" class="py-24 px-6 relative z-10 bg-[#0a1930]">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div class="reveal">
+                    <h2 class="text-4xl font-bold mb-6">Por que grandes especialistas escolhem a <span class="text-soft-cyan">Essencial Saúde</span>?</h2>
+                    <p class="text-gray-400 text-lg mb-8 font-light">
+                        Entendemos que no centro cirúrgico ou no consultório, não há margem para falhas. Nossos produtos passam por rigorosos testes de qualidade para garantir a integridade do profissional e a segurança do paciente.
+                    </p>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="check-circle" class="w-6 h-6 text-neon-cyan shrink-0"></i>
+                            <span class="text-gray-300">Rastreabilidade completa de todos os lotes.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="check-circle" class="w-6 h-6 text-neon-cyan shrink-0"></i>
+                            <span class="text-gray-300">Entrega expressa (Logística otimizada para urgências).</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="check-circle" class="w-6 h-6 text-neon-cyan shrink-0"></i>
+                            <span class="text-gray-300">Atendimento consultivo especializado para clínicas e hospitais.</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="grid grid-cols-2 gap-6 reveal">
+                    <div class="glass-panel p-8 rounded-3xl text-center">
+                        <div class="text-5xl font-bold text-gradient mb-2">+10k</div>
+                        <div class="text-sm text-gray-400 uppercase tracking-widest">Procedimentos<br>Seguros</div>
+                    </div>
+                    <div class="glass-panel p-8 rounded-3xl text-center translate-y-8">
+                        <div class="text-5xl font-bold text-gradient mb-2">24h</div>
+                        <div class="text-sm text-gray-400 uppercase tracking-widest">Suporte<br>Especializado</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Products Section -->
+    <section id="produtos" class="py-32 px-6 relative">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4">Linha de <span class="font-light">Alta Performance</span></h2>
+                <p class="text-gray-400 max-w-2xl mx-auto">Itens indispensáveis para a rotina médica, com materiais que oferecem ergonomia, proteção de barreira e precisão tátil.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Product 1 -->
+                <div class="glass-panel rounded-2xl p-6 reveal group cursor-pointer">
+                    <div class="h-48 w-full bg-[#050a1f] rounded-xl mb-6 flex items-center justify-center border border-white/5 group-hover:border-neon-cyan/30 transition-colors">
+                        <i data-lucide="microscope" class="w-16 h-16 text-soft-cyan opacity-50 group-hover:opacity-100 transition-opacity"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Instrumental Cirúrgico</h3>
+                    <p class="text-gray-400 text-sm mb-6">Aço inox de grau cirúrgico, garantindo durabilidade e precisão milimétrica nas incisões e manipulações.</p>
+                    <a href="https://loja.exijaepis.com.br" target="_blank" class="text-neon-cyan text-sm font-semibold flex items-center gap-2 group-hover:gap-3 transition-all">
+                        Ver Modelos <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="glass-panel rounded-2xl p-6 reveal delay-100 group cursor-pointer">
+                    <div class="h-48 w-full bg-[#050a1f] rounded-xl mb-6 flex items-center justify-center border border-white/5 group-hover:border-neon-cyan/30 transition-colors">
+                        <i data-lucide="shield" class="w-16 h-16 text-soft-cyan opacity-50 group-hover:opacity-100 transition-opacity"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">EPIs e Paramentação</h3>
+                    <p class="text-gray-400 text-sm mb-6">Luvas cirúrgicas com alta sensibilidade tátil, aventais estéreis e máscaras N95 com filtragem superior a 99%.</p>
+                    <a href="https://loja.exijaepis.com.br" target="_blank" class="text-neon-cyan text-sm font-semibold flex items-center gap-2 group-hover:gap-3 transition-all">
+                        Ver Especificações <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="glass-panel rounded-2xl p-6 reveal delay-200 group cursor-pointer">
+                    <div class="h-48 w-full bg-[#050a1f] rounded-xl mb-6 flex items-center justify-center border border-white/5 group-hover:border-neon-cyan/30 transition-colors">
+                        <i data-lucide="package-plus" class="w-16 h-16 text-soft-cyan opacity-50 group-hover:opacity-100 transition-opacity"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Kits de Procedimento</h3>
+                    <p class="text-gray-400 text-sm mb-6">Kits estéreis padronizados para acessos venosos, suturas e pequenos procedimentos. Praticidade e assepsia.</p>
+                    <a href="https://loja.exijaepis.com.br" target="_blank" class="text-neon-cyan text-sm font-semibold flex items-center gap-2 group-hover:gap-3 transition-all">
+                        Conferir Kits <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="mt-12 text-center reveal">
+                <a href="https://loja.exijaepis.com.br" target="_blank" class="inline-flex items-center gap-2 px-8 py-4 rounded-full border border-white/20 hover:border-neon-cyan hover:bg-neon-cyan/5 transition-all">
+                    Acessar e-Commerce Completo
+                    <i data-lucide="external-link" class="w-4 h-4"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="avaliacoes" class="py-24 px-6 bg-gradient-to-b from-[#050a1f] to-[#081126] relative overflow-hidden">
+        <div class="glow-blob w-[400px] h-[400px] bg-cyan-900/30 top-[10%] left-[30%]"></div>
+        
+        <div class="max-w-5xl mx-auto relative z-10">
+            <div class="flex items-center gap-4 mb-12 reveal">
+                <div class="w-12 h-[1px] bg-neon-cyan"></div>
+                <h2 class="text-3xl font-light uppercase tracking-widest text-gray-300">A Voz dos Colegas</h2>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="glass-panel p-8 rounded-2xl reveal">
+                    <i data-lucide="quote" class="w-8 h-8 text-soft-cyan mb-4 opacity-50"></i>
+                    <p class="text-lg text-gray-300 mb-6 font-light">"A migração para os produtos da Essencial Saúde reduziu nosso índice de falha de paramentação a zero. As luvas cirúrgicas possuem uma resistência mecânica impressionante sem perder a sensibilidade necessária para microcirurgias."</p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-full bg-gradient-to-r from-cyan-500 to-blue-500 flex items-center justify-center font-bold text-lg">
+                            CM
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-white">Dr. Carlos Mendes</h4>
+                            <p class="text-sm text-neon-cyan">Cirurgião Geral - CRM-SP 12345</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass-panel p-8 rounded-2xl reveal delay-100">
+                    <i data-lucide="quote" class="w-8 h-8 text-soft-cyan mb-4 opacity-50"></i>
+                    <p class="text-lg text-gray-300 mb-6 font-light">"O que mais me impressiona, além da qualidade inquestionável dos insumos, é a agilidade logística. Em situações de alta demanda no consultório, saber que posso contar com a entrega deles me traz muita tranquilidade."</p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 flex items-center justify-center font-bold text-lg">
+                            AS
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-white">Dra. Amanda Silva</h4>
+                            <p class="text-sm text-neon-cyan">Dermatologista - CRM-SP 54321</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer / Final CTA -->
+    <footer class="pt-24 pb-12 px-6 border-t border-white/5 relative bg-[#030612]">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start gap-12 reveal">
+            <div class="max-w-sm">
+                <div class="flex items-center gap-2 mb-6">
+                    <i data-lucide="activity" class="text-neon-cyan h-8 w-8"></i>
+                    <span class="text-2xl font-bold tracking-tight">Essencial <span class="font-light text-soft-cyan">Saúde</span></span>
+                </div>
+                <p class="text-gray-500 text-sm">Elevando o padrão de segurança e eficiência em ambientes hospitalares. Um projeto da rede Exija EPIs.</p>
+            </div>
+            
+            <div class="flex flex-col gap-3">
+                <h4 class="font-bold mb-2">Links Rápidos</h4>
+                <a href="#produtos" class="text-gray-400 hover:text-white text-sm transition-colors">Produtos</a>
+                <a href="#diferenciais" class="text-gray-400 hover:text-white text-sm transition-colors">Diferenciais</a>
+                <a href="https://loja.exijaepis.com.br" target="_blank" class="text-gray-400 hover:text-white text-sm transition-colors">Acessar Loja Virtual</a>
+            </div>
+
+            <div class="flex flex-col gap-3">
+                <h4 class="font-bold mb-2">Contato Especializado</h4>
+                <a href="https://wa.me/5511983446562" target="_blank" class="text-gray-400 hover:text-neon-cyan text-sm flex items-center gap-2 transition-colors">
+                    <i data-lucide="phone" class="w-4 h-4"></i> (11) 98344-6562
+                </a>
+                <span class="text-gray-400 text-sm flex items-center gap-2">
+                    <i data-lucide="mail" class="w-4 h-4"></i> contato@exijaepis.com.br
+                </span>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto mt-16 pt-8 border-t border-white/5 text-center text-sm text-gray-600">
+            &copy; 2026 Essencial Saúde / Exija EPIs. Todos os direitos reservados.
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/5511983446562?text=Olá,%20vim%20pelo%20site%20da%20Essencial%20Saúde%20e%20preciso%20de%20atendimento." 
+       target="_blank" 
+       class="fixed bottom-6 right-6 z-50 bg-[#25D366] text-white p-4 rounded-full shadow-[0_4px_20px_rgba(37,211,102,0.4)] hover:scale-110 hover:shadow-[0_4px_25px_rgba(37,211,102,0.6)] transition-all duration-300 group">
+        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/>
+        </svg>
+        <!-- Tooltip -->
+        <span class="absolute right-16 top-1/2 -translate-y-1/2 bg-white text-deep-blue font-bold px-3 py-1 rounded-lg text-sm opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap shadow-lg pointer-events-none">
+            Falar com Consultor
+        </span>
+    </a>
+
+    <!-- Initialization Scripts -->
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Scroll Reveal Animation
+        const revealElements = document.querySelectorAll('.reveal');
+        
+        const revealOptions = {
+            threshold: 0.15,
+            rootMargin: "0px 0px -50px 0px"
+        };
+
+        const revealOnScroll = new IntersectionObserver(function(entries, observer) {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) return;
+                entry.target.classList.add('active');
+                observer.unobserve(entry.target);
+            });
+        }, revealOptions);
+
+        revealElements.forEach(el => revealOnScroll.observe(el));
+
+        // Navbar blur effect on scroll
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.style.background = 'rgba(5, 10, 31, 0.8)';
+                navbar.style.borderBottom = '1px solid rgba(255,255,255,0.1)';
+            } else {
+                navbar.style.background = 'rgba(255, 255, 255, 0.03)';
+                navbar.style.borderBottom = 'none';
+            }
+        });
+    </script>
+</body>
+</html>

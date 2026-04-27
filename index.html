@@ -74,29 +74,6 @@
             -webkit-text-fill-color: transparent;
         }
 
-        /* Floating Animation */
-        @keyframes float-slow {
-            0% { transform: translateY(0px) rotate(0deg) scale(1); }
-            50% { transform: translateY(-20px) rotate(3deg) scale(1.02); }
-            100% { transform: translateY(0px) rotate(0deg) scale(1); }
-        }
-        
-        .float-anim {
-            animation: float-slow 8s ease-in-out infinite;
-        }
-        
-        .float-anim-reverse {
-            animation: float-slow 9s ease-in-out infinite reverse;
-        }
-
-        /* Delays para dessincronizar as animações */
-        .delay-1 { animation-delay: -2s; }
-        .delay-2 { animation-delay: -4s; }
-        .delay-3 { animation-delay: -6s; }
-        .delay-4 { animation-delay: -1s; }
-        .delay-5 { animation-delay: -5s; }
-        .delay-6 { animation-delay: -3s; }
-
         /* Infinite Carousel */
         @keyframes scroll-x {
             0% { transform: translateX(0); }
@@ -134,47 +111,21 @@
         </div>
     </header>
 
-    <!-- Hero Section (Estilo SaaS) -->
-    <section class="pt-32 pb-20 px-6 relative overflow-hidden bg-gradient-to-b from-slate-50 to-white min-h-[90vh] flex items-center">
+    <!-- Hero Section (Estilo SaaS com Neon Sutil) -->
+    <section class="pt-32 pb-20 px-6 relative overflow-hidden bg-white min-h-[90vh] flex items-center">
         
-        <!-- Elementos de Fundo Flutuantes Multiplicados -->
-        <div class="absolute inset-0 w-full h-full pointer-events-none z-0">
-            <!-- Camada 1: Grandes e desfocadas (Fundo) -->
-            <div class="absolute top-10 left-[-5%] w-64 h-64 md:w-96 md:h-96 opacity-20 blur-[12px] float-anim delay-1">
-                <img src="assets/images/001.png" alt="" class="w-full h-full object-contain">
-            </div>
-            <div class="absolute top-32 right-[-2%] w-56 h-56 md:w-80 md:h-80 opacity-25 blur-[10px] float-anim delay-4">
-                <img src="assets/images/002.png" alt="" class="w-full h-full object-contain">
-            </div>
-            <div class="absolute bottom-10 left-[65%] w-72 h-72 md:w-80 md:h-80 opacity-15 blur-[14px] float-anim-reverse delay-3">
-                <img src="assets/images/003.png" alt="" class="w-full h-full object-contain">
-            </div>
-
-            <!-- Camada 2: Médias e levemente nítidas (Meio) -->
-            <div class="absolute top-[60%] left-[15%] w-32 h-32 md:w-48 md:h-48 opacity-30 blur-[5px] float-anim delay-2">
-                <img src="assets/images/001.png" alt="" class="w-full h-full object-contain">
-            </div>
-            <div class="absolute top-[15%] left-[40%] w-24 h-24 md:w-40 md:h-40 opacity-20 blur-[6px] float-anim-reverse delay-5">
-                <img src="assets/images/002.png" alt="" class="w-full h-full object-contain">
-            </div>
-            <div class="absolute bottom-[20%] right-[25%] w-32 h-32 md:w-48 md:h-48 opacity-35 blur-[4px] float-anim delay-6">
-                <img src="assets/images/003.png" alt="" class="w-full h-full object-contain">
-            </div>
-
-            <!-- Camada 3: Pequenas e detalhadas (Frente) - Ocultas no mobile para não poluir -->
-            <div class="hidden md:block absolute top-[40%] right-[35%] w-16 h-16 opacity-40 blur-[2px] float-anim-reverse delay-1">
-                <img src="assets/images/001.png" alt="" class="w-full h-full object-contain">
-            </div>
-            <div class="hidden md:block absolute bottom-[45%] left-[30%] w-20 h-20 opacity-45 blur-[3px] float-anim delay-4">
-                <img src="assets/images/002.png" alt="" class="w-full h-full object-contain">
-            </div>
-            <div class="hidden md:block absolute top-[25%] right-[15%] w-24 h-24 opacity-30 blur-[2px] float-anim delay-2">
-                <img src="assets/images/003.png" alt="" class="w-full h-full object-contain">
-            </div>
+        <!-- Gradientes Neon Sutis (Fundo) -->
+        <div class="absolute inset-0 w-full h-full pointer-events-none z-0 overflow-hidden">
+            <!-- Brilho Azul Principal Centralizado -->
+            <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-brand-blue/10 blur-[120px] rounded-full"></div>
+            <!-- Brilho Ciano Canto Inferior Direito -->
+            <div class="absolute -bottom-32 -right-32 w-[600px] h-[600px] bg-[#00C6FF]/10 blur-[140px] rounded-full"></div>
+            <!-- Brilho Azul Canto Superior Esquerdo -->
+            <div class="absolute -top-32 -left-32 w-[500px] h-[500px] bg-brand-blue/10 blur-[120px] rounded-full"></div>
         </div>
 
         <div class="max-w-5xl mx-auto text-center z-10 relative reveal w-full mt-8 md:mt-0">
-            <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-blue-100 bg-white/60 backdrop-blur-sm text-brand-blue text-xs font-semibold mb-6 uppercase tracking-wider shadow-sm">
+            <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-brand-blue/20 bg-white/60 backdrop-blur-md text-brand-blue text-xs font-semibold mb-6 uppercase tracking-wider shadow-sm">
                 <i data-lucide="shield-check" class="w-4 h-4"></i>
                 <span>Gestão Inteligente & Excelência Clínica</span>
             </div>
@@ -202,7 +153,7 @@
     </section>
 
     <!-- Persuasion / Stats Section -->
-    <section id="diferenciais" class="py-24 px-6 bg-white relative z-10">
+    <section id="diferenciais" class="py-24 px-6 bg-slate-50 relative z-10 border-t border-slate-100">
         <div class="max-w-6xl mx-auto">
             <div class="text-center mb-16 reveal">
                 <h2 class="text-3xl md:text-4xl font-bold mb-4 text-brand-dark">Por que clínicas de alto rendimento escolhem a Essencial Saúde?</h2>
@@ -210,7 +161,7 @@
             </div>
 
             <div class="grid md:grid-cols-3 gap-8">
-                <div class="clean-card p-8 reveal">
+                <div class="clean-card p-8 reveal bg-white">
                     <div class="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center mb-6 text-brand-blue">
                         <i data-lucide="trending-down" class="w-6 h-6"></i>
                     </div>
@@ -218,7 +169,7 @@
                     <p class="text-brand-gray text-sm leading-relaxed">Materiais com zero índice de falha mecânica. Você para de perder dinheiro com luvas rasgadas e insumos descartados precocemente.</p>
                 </div>
 
-                <div class="clean-card p-8 reveal delay-100">
+                <div class="clean-card p-8 reveal delay-100 bg-white">
                     <div class="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center mb-6 text-brand-blue">
                         <i data-lucide="clock" class="w-6 h-6"></i>
                     </div>
@@ -226,7 +177,7 @@
                     <p class="text-brand-gray text-sm leading-relaxed">Logística expressa e kits padronizados que aceleram o "turnover" (preparo) das salas. Atenda mais pacientes no mesmo turno.</p>
                 </div>
 
-                <div class="clean-card p-8 reveal delay-200">
+                <div class="clean-card p-8 reveal delay-200 bg-white">
                     <div class="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center mb-6 text-brand-blue">
                         <i data-lucide="shield-check" class="w-6 h-6"></i>
                     </div>
@@ -238,7 +189,7 @@
     </section>
 
     <!-- Main Products Section -->
-    <section id="produtos" class="py-24 px-6 bg-slate-50 border-y border-slate-200 relative z-10">
+    <section id="produtos" class="py-24 px-6 bg-white border-y border-slate-200 relative z-10">
         <div class="max-w-6xl mx-auto">
             <div class="flex flex-col md:flex-row justify-between items-end mb-12 reveal">
                 <div class="max-w-2xl">
@@ -252,7 +203,7 @@
 
             <div class="grid md:grid-cols-3 gap-6">
                 <!-- Product 1 -->
-                <a href="https://loja.exijaepis.com.br" target="_blank" class="clean-card overflow-hidden reveal group block">
+                <a href="https://loja.exijaepis.com.br" target="_blank" class="clean-card overflow-hidden reveal group block bg-white">
                     <div class="h-48 bg-slate-200 relative overflow-hidden border-b border-slate-100">
                         <img src="assets/images/004.jpg" alt="Instrumental Cirúrgico" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                         <div class="absolute inset-0 bg-brand-dark/10 group-hover:bg-transparent transition-colors duration-300"></div>
@@ -265,7 +216,7 @@
                 </a>
 
                 <!-- Product 2 -->
-                <a href="https://loja.exijaepis.com.br" target="_blank" class="clean-card overflow-hidden reveal delay-100 group block">
+                <a href="https://loja.exijaepis.com.br" target="_blank" class="clean-card overflow-hidden reveal delay-100 group block bg-white">
                     <div class="h-48 bg-slate-200 relative overflow-hidden border-b border-slate-100">
                         <img src="assets/images/005.jpg" alt="EPIs e Paramentação" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                         <div class="absolute inset-0 bg-brand-dark/10 group-hover:bg-transparent transition-colors duration-300"></div>
@@ -278,7 +229,7 @@
                 </a>
 
                 <!-- Product 3 -->
-                <a href="https://loja.exijaepis.com.br" target="_blank" class="clean-card overflow-hidden reveal delay-200 group block">
+                <a href="https://loja.exijaepis.com.br" target="_blank" class="clean-card overflow-hidden reveal delay-200 group block bg-white">
                     <div class="h-48 bg-slate-200 relative overflow-hidden border-b border-slate-100">
                         <img src="assets/images/006.jpg" alt="Kits de Procedimento" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                         <div class="absolute inset-0 bg-brand-dark/10 group-hover:bg-transparent transition-colors duration-300"></div>
@@ -294,17 +245,17 @@
     </section>
 
     <!-- Testimonials Section -->
-    <section id="avaliacoes" class="py-24 overflow-hidden bg-white relative z-10">
+    <section id="avaliacoes" class="py-24 overflow-hidden bg-slate-50 relative z-10">
         <div class="max-w-4xl mx-auto text-center reveal px-6 mb-12">
             <h2 class="text-3xl font-bold text-brand-dark">Profissionais que lucram com nossa qualidade</h2>
         </div>
         
         <div class="relative w-full overflow-hidden reveal delay-100 flex py-4 group">
-            <div class="absolute left-0 top-0 bottom-0 w-16 md:w-48 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none"></div>
+            <div class="absolute left-0 top-0 bottom-0 w-16 md:w-48 bg-gradient-to-r from-slate-50 to-transparent z-10 pointer-events-none"></div>
             
             <div class="flex w-max animate-scroll-x">
                 <!-- SET 1 -->
-                <div class="w-80 md:w-[400px] shrink-0 mx-3 clean-card p-8 flex flex-col justify-between">
+                <div class="w-80 md:w-[400px] shrink-0 mx-3 clean-card bg-white p-8 flex flex-col justify-between">
                     <div>
                         <div class="flex items-center gap-1 mb-4 text-[#FFB800]">
                             <i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i>
@@ -320,7 +271,7 @@
                     </div>
                 </div>
 
-                <div class="w-80 md:w-[400px] shrink-0 mx-3 clean-card p-8 flex flex-col justify-between">
+                <div class="w-80 md:w-[400px] shrink-0 mx-3 clean-card bg-white p-8 flex flex-col justify-between">
                     <div>
                         <div class="flex items-center gap-1 mb-4 text-[#FFB800]">
                             <i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i>
@@ -336,7 +287,7 @@
                     </div>
                 </div>
 
-                <div class="w-80 md:w-[400px] shrink-0 mx-3 clean-card p-8 flex flex-col justify-between">
+                <div class="w-80 md:w-[400px] shrink-0 mx-3 clean-card bg-white p-8 flex flex-col justify-between">
                     <div>
                         <div class="flex items-center gap-1 mb-4 text-[#FFB800]">
                             <i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i>
@@ -352,7 +303,7 @@
                     </div>
                 </div>
 
-                <div class="w-80 md:w-[400px] shrink-0 mx-3 clean-card p-8 flex flex-col justify-between">
+                <div class="w-80 md:w-[400px] shrink-0 mx-3 clean-card bg-white p-8 flex flex-col justify-between">
                     <div>
                         <div class="flex items-center gap-1 mb-4 text-[#FFB800]">
                             <i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i>
@@ -368,7 +319,7 @@
                     </div>
                 </div>
 
-                <div class="w-80 md:w-[400px] shrink-0 mx-3 clean-card p-8 flex flex-col justify-between">
+                <div class="w-80 md:w-[400px] shrink-0 mx-3 clean-card bg-white p-8 flex flex-col justify-between">
                     <div>
                         <div class="flex items-center gap-1 mb-4 text-[#FFB800]">
                             <i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i>
@@ -384,7 +335,7 @@
                     </div>
                 </div>
 
-                <div class="w-80 md:w-[400px] shrink-0 mx-3 clean-card p-8 flex flex-col justify-between">
+                <div class="w-80 md:w-[400px] shrink-0 mx-3 clean-card bg-white p-8 flex flex-col justify-between">
                     <div>
                         <div class="flex items-center gap-1 mb-4 text-[#FFB800]">
                             <i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i>
@@ -401,7 +352,7 @@
                 </div>
 
                 <!-- SET 2 (Clone) -->
-                <div class="w-80 md:w-[400px] shrink-0 mx-3 clean-card p-8 flex flex-col justify-between" aria-hidden="true">
+                <div class="w-80 md:w-[400px] shrink-0 mx-3 clean-card bg-white p-8 flex flex-col justify-between" aria-hidden="true">
                     <div>
                         <div class="flex items-center gap-1 mb-4 text-[#FFB800]">
                             <i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i>
@@ -417,7 +368,7 @@
                     </div>
                 </div>
 
-                <div class="w-80 md:w-[400px] shrink-0 mx-3 clean-card p-8 flex flex-col justify-between" aria-hidden="true">
+                <div class="w-80 md:w-[400px] shrink-0 mx-3 clean-card bg-white p-8 flex flex-col justify-between" aria-hidden="true">
                     <div>
                         <div class="flex items-center gap-1 mb-4 text-[#FFB800]">
                             <i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i>
@@ -433,7 +384,7 @@
                     </div>
                 </div>
 
-                <div class="w-80 md:w-[400px] shrink-0 mx-3 clean-card p-8 flex flex-col justify-between" aria-hidden="true">
+                <div class="w-80 md:w-[400px] shrink-0 mx-3 clean-card bg-white p-8 flex flex-col justify-between" aria-hidden="true">
                     <div>
                         <div class="flex items-center gap-1 mb-4 text-[#FFB800]">
                             <i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i>
@@ -449,7 +400,7 @@
                     </div>
                 </div>
 
-                <div class="w-80 md:w-[400px] shrink-0 mx-3 clean-card p-8 flex flex-col justify-between" aria-hidden="true">
+                <div class="w-80 md:w-[400px] shrink-0 mx-3 clean-card bg-white p-8 flex flex-col justify-between" aria-hidden="true">
                     <div>
                         <div class="flex items-center gap-1 mb-4 text-[#FFB800]">
                             <i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i>
@@ -465,7 +416,7 @@
                     </div>
                 </div>
 
-                <div class="w-80 md:w-[400px] shrink-0 mx-3 clean-card p-8 flex flex-col justify-between" aria-hidden="true">
+                <div class="w-80 md:w-[400px] shrink-0 mx-3 clean-card bg-white p-8 flex flex-col justify-between" aria-hidden="true">
                     <div>
                         <div class="flex items-center gap-1 mb-4 text-[#FFB800]">
                             <i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i>
@@ -481,7 +432,7 @@
                     </div>
                 </div>
 
-                <div class="w-80 md:w-[400px] shrink-0 mx-3 clean-card p-8 flex flex-col justify-between" aria-hidden="true">
+                <div class="w-80 md:w-[400px] shrink-0 mx-3 clean-card bg-white p-8 flex flex-col justify-between" aria-hidden="true">
                     <div>
                         <div class="flex items-center gap-1 mb-4 text-[#FFB800]">
                             <i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i>
@@ -498,14 +449,14 @@
                 </div>
             </div>
 
-            <div class="absolute right-0 top-0 bottom-0 w-16 md:w-48 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none"></div>
+            <div class="absolute right-0 top-0 bottom-0 w-16 md:w-48 bg-gradient-to-l from-slate-50 to-transparent z-10 pointer-events-none"></div>
         </div>
     </section>
 
     <!-- CTA / Instagram Section (Clean Style) -->
-    <section class="py-16 px-6 bg-blue-50 border-y border-blue-100 relative z-10">
+    <section class="py-16 px-6 bg-white border-y border-slate-200 relative z-10">
         <div class="max-w-4xl mx-auto text-center reveal">
-            <div class="w-16 h-16 bg-white rounded-2xl shadow-sm flex items-center justify-center mx-auto mb-6">
+            <div class="w-16 h-16 bg-blue-50 rounded-2xl shadow-sm flex items-center justify-center mx-auto mb-6">
                 <i data-lucide="instagram" class="w-8 h-8 text-brand-blue"></i>
             </div>
             <h2 class="text-3xl font-bold text-brand-dark mb-4">Acompanhe nossa rotina</h2>
@@ -517,7 +468,7 @@
     </section>
 
     <!-- Footer -->
-    <footer class="pt-16 pb-8 px-6 bg-white border-t border-slate-200 relative z-10">
+    <footer class="pt-16 pb-8 px-6 bg-slate-50 relative z-10">
         <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-start gap-12 mb-16">
             <div class="max-w-sm">
                 <div class="flex items-center gap-2 mb-4">
@@ -549,7 +500,7 @@
                 </a>
             </div>
         </div>
-        <div class="max-w-6xl mx-auto pt-8 border-t border-slate-100 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-slate-400">
+        <div class="max-w-6xl mx-auto pt-8 border-t border-slate-200 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-slate-400">
             <span>&copy; 2026 Essencial Saúde / Exija EPIs.</span>
             <div class="flex gap-4">
                 <a href="#" class="hover:text-brand-dark">Termos</a>
